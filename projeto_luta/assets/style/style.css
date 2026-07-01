@@ -1,42 +1,85 @@
 .arena{
+    position: absolute;
+    border:solid black;
     display: flex;
     gap: 20px;
     width:100%;
-    height: 800px;
+    height: 100%;
     background-image: url("../jpeg/arena.jpg");
     position: relative;
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
 }
 #lutador1, #lutador2{
+    overflow: hidden;
     flex:1;
     width: 50%;
     height: 100%;
+    
 }
 .life{
+    position: absolute;
+    width: 35%;
     height: 50px;
     border: 1px solid black;
     border-radius: 5px;
 }
 .life .barra{
+    position: relative;
     height: inherit;
     background-color: red;
     border-radius: 5px;
-    width: 50%;
+    width: 100%;
 }
-.sprit1 img, .sprit2 img{
+
+.sprit1 img{
     position: relative;
+    margin: 0 30%;
     padding-top: 350px;
-    width:80%;
+    width:50%;
+    height: 50%;
 }
+.sprit2 img{
+    position: relative;
+    margin: 50px 30% 0 0;
+    padding-top: 350px;
+    width:50%;
+    height: 50%;
 
-
-
+}
 
 .log{
     border:1px dotted white;
-    height: 50px;
+    height: 30%;
+    width: 100%;
     overflow:scroll ;
+
+}
+.nome{
+    font-weight: bold;
+    font-style: bold;
+    position: absolute;
+    margin-top: 55px;
+}
+
+.botaor, .botaol{
+    position: absolute;
+    font-size: 13px;
+    background-color: yellow;
+    color: red;
+    font-weight: 900;
+    width: 10%;
+    height: 10%;
+    border-radius: 20%;
+    cursor:pointer;
+}
+
+.botaor{
+    margin: 10% 0 0 5%;
+}
+
+.botaol{
+    margin: 10% 0 0 30%;
 
 }
