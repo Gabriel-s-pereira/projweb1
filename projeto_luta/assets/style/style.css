@@ -31,6 +31,7 @@
     background-color: red;
     border-radius: 5px;
     width: 100%;
+    font-size: la;
 }
 
 .sprit1 img{
@@ -50,10 +51,17 @@
 }
 
 .log{
-    border:1px dotted white;
-    height: 30%;
-    width: 100%;
-    overflow:scroll ;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    max-height: 250px;
+    overflow-y: auto;
+
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+
+    font-family: Arial, sans-serif;
 
 }
 .nome{
