@@ -29,15 +29,24 @@ class Char{
 
 }
 
-function atualizalife(){
-    lutador1dom.children[1].innerText = girafales.name; 
-    lutador1dom.children[0].children[0].style.width = `${girafales.life}%`;
-    lutador1dom.children[0].children[0].innerText = girafales.life;
 
-    lutador2dom.children[1].innerText = madruga.name;
-    lutador2dom.children[0].children[0].style.width = `${madruga.life}%`;
-    lutador2dom.children[0].children[0].innerText = madruga.life;
+function atualizalife(){
+    life1.style.width = `${lutador1obj.life}%`;
+    life1.innerText = lutador1obj.life;
+
+    life2.style.width = `${lutador2obj.life}%`;
+    life2.innerText = lutador2obj.life;
+    
+//ALTERA A COR DA BARRA DE VIDA QUANDO O PERSONAGEM TIVER 99 OU MENOS DE VIDA.
+    if(lutador1obj.life < 100){
+        life1.style.backgroundColor = "red";
+    };
+    if(lutador2obj.life < 100){
+        life2.style.backgroundColor = "red";
+    }
 }
+
+
 function finalround(){
     if(lutador1obj.life < 0 || lutador2obj.life < 0 ){
         if (lutador1obj.life > 0){
@@ -88,16 +97,24 @@ const lutador2dom = document.querySelector("#lutador2");
 
 //*********************************
 // SETANDO O LUTADOR 1 ESCOLHIDO 
-lutador1dom.children[1].innerText = girafales.name;
-lutador1dom.children[0].children[0].style.width = `${girafales.life}%`;
-lutador1dom.children[0].children[0].innerText = girafales.life;
+const nome1 = lutador1dom.children[1];
+const life1 = lutador1dom.children[0].children[0];
+
+nome1.innerText = lutador1obj.name;
+life1.style.width = `${lutador1obj.life}%`;
+life1.innerText = lutador1obj.life;
 //console.log(girafales.atacar(madruga));
 
 //*********************************
 // SETANDO O LUTADOR 2 ESCOLHIDO */
-lutador2dom.children[1].innerText = madruga.name;
-lutador2dom.children[0].children[0].style.width = `${madruga.life}%`;
-lutador2dom.children[0].children[0].innerText = madruga.life;
+
+const nome2 = lutador2dom.children[1];
+const life2 = lutador2dom.children[0].children[0];
+
+nome2.innerText = lutador2obj.name;
+life2.style.width = `${lutador2obj.life}%`;
+life2.innerText = lutador2obj.life;
+
 //console.log(madruga.atacar(girafales)); //obs: o ataque deve ficar a cima da setação de hp
 
 

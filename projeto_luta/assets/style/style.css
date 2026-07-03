@@ -22,16 +22,16 @@
     position: absolute;
     width: 35%;
     height: 50px;
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 5px solid black;
+    border-radius: 5px 5px 50px 5px;
+    font-size: 50px;
 }
 .life .barra{
     position: relative;
     height: inherit;
-    background-color: red;
-    border-radius: 5px;
+    background-color: green;
+    border-radius: 5px 5px 50px 5px;
     width: 100%;
-    font-size: la;
 }
 
 .sprit1 img{
@@ -69,13 +69,18 @@
     font-style: bold;
     position: absolute;
     margin-top: 55px;
+    font-size: 35px;
+    color:white;
+    border: solid black;
+    border-radius: 10%;
+    border-color: greenyellow;
 }
 
 .botaor, .botaol{
     position: absolute;
-    font-size: 13px;
-    background-color: yellow;
-    color: red;
+    font-size: 25px;
+    background-color: red;
+    color: yellow;
     font-weight: 900;
     width: 10%;
     height: 10%;
