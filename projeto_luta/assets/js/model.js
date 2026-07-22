@@ -24,19 +24,19 @@ export class Char{
     sorteio(){
         return ((Math.random() * 10) + this.lucky);
     }
-    logadd(log, msg){
-        let tag = document.createElement("li");
-        tag.innerText = msg; 
-        log.prepend(tag);
-    }
+
     atacar(alvo){
-        let dano = Math.floor(this.sorteio())
-        alvo.life -= dano;
-        let msg =`o ${this.name} causou ${dano} de dano em ${alvo.name}`;
-        atualizalife();
-        this.logadd(log, msg);
+        let msg;
+        if(defesa(alvo.lucky)){
+            msg = `🛡️ ${alvo.name} defendeu o ataque! 🛡️ `;
+        }else{
+            let dano = Math.floor(this.sorteio())
+            alvo.life -= dano;
+            msg =`⚔️ o ${this.name} causou ${dano} de dano em ${alvo.name} ⚔️`;
+            atualizalife();
+        };
+        logadd(log, msg);
         finalround();
-        return;
     }
 
 }
@@ -53,7 +53,16 @@ const chiquinha = new Char("Chiquinha",90,4);
 const lutador1obj = girafales;
 const lutador2obj = madruga;
 
+//MANUTENÇÃO DO LOG.
+let log = document.querySelector(".log");
 
+function logadd(log, msg){
+        let tag = document.createElement("li");
+        tag.innerText = msg; 
+        log.prepend(tag);
+    };
+
+/** ATUALIZA O HP NO DOM */
 function atualizalife(){
     life1.style.width = `${lutador1obj.life}%`;
     life1.innerText = lutador1obj.life;
@@ -129,6 +138,17 @@ life2.innerText = lutador2obj.life;
 
 //console.log(madruga.atacar(girafales)); //obs: o ataque deve ficar a cima da setação de hp
 
+/***************************************
+CALCULO DE SORTE PARA DEFESA OU NÃO. 
+*/
+function defesa(sorte){
 
-//MANUTENÇÃO DO LOG.
-let log = document.querySelector(".log");
+    let resultado = Math.random();
+
+    for(let i = 1; i < sorte; i++){
+        resultado = Math.max(resultado, Math.random());
+    }
+
+    return resultado >= 0.75;
+};
+
