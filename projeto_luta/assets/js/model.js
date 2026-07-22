@@ -1,14 +1,26 @@
-class Char{
+export class Char{
+    _life = 0;
     constructor(nome, hp, sorte){
         if (typeof(hp) !== "number" || typeof(sorte) !== "number"){ 
             throw new Error("HP E SORTE DEVEM SER NUMEROS.");
             }
         else{
             this.name = nome;
-            this.life = hp;
+            this._life = hp;
             this.lucky = sorte;
         }
     }
+    get life(){
+        if (this._life < 0){
+            return this._life = 0;
+        }else
+            {return this._life};
+        }
+
+    set life(x){
+        this._life = x;
+    }
+
     sorteio(){
         return ((Math.random() * 10) + this.lucky);
     }
@@ -29,6 +41,18 @@ class Char{
 
 }
 
+//PERSONAGENS PARA VERSÃO POSTERIOR.
+const chaves = new Char("chaves",120,2);
+const girafales = new Char("PROFESSOR GIRAFALES",110,2);
+const madruga = new Char("SEU MADRUGA",130,1);
+const quico = new Char("Quico",100,3);
+const chiquinha = new Char("Chiquinha",90,4);
+
+//**para a primeira versão teremos somente os personagens
+//  prof.girafalles e seu madruga.  */
+const lutador1obj = girafales;
+const lutador2obj = madruga;
+
 
 function atualizalife(){
     life1.style.width = `${lutador1obj.life}%`;
@@ -48,7 +72,7 @@ function atualizalife(){
 
 
 function finalround(){
-    if(lutador1obj.life < 0 || lutador2obj.life < 0 ){
+    if(lutador1obj.life <= 0 || lutador2obj.life <= 0 ){
         if (lutador1obj.life > 0){
             alert(`o ${lutador1obj.name} veuceu a batalha!!`);
         }else{
@@ -57,18 +81,6 @@ function finalround(){
         log.innerHTML = "<h1> REINICIE O GAME </h1>";
 }
 }
-
-//PERSONAGENS PARA VERSÃO POSTERIOR.
-const chaves = new Char("chaves",120,2);
-const girafales = new Char("PROFESSOR GIRAFALES",110,2);
-const madruga = new Char("SEU MADRUGA",130,1);
-const quico = new Char("Quico",100,3);
-const chiquinha = new Char("Chiquinha",90,4);
-
-//**para a primeira versão teremos somente os personagens
-//  prof.girafalles e seu madruga.  */
-const lutador1obj = girafales;
-const lutador2obj = madruga;
 
 //* criando os botões de ataque */
 let botao1 = document.querySelector(".botaor");
