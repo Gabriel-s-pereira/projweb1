@@ -1,1 +1,0 @@
-import {Class } from "./model.js";
