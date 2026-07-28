@@ -1,12 +1,11 @@
 .arena{
-    position: absolute;
+    position: relative;
     border:solid black;
     display: flex;
     gap: 20px;
     width:100%;
     height: 100%;
     background-image: url("../jpeg/arena.jpg");
-    position: relative;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

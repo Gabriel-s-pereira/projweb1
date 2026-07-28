@@ -1,3 +1,37 @@
+//FUNÇÕES
+/**ATUALIZA O LOG */
+function adicionalog(log, msg){
+        let tag = document.createElement("li");
+        tag.innerText = msg; 
+        log.prepend(tag);
+    };
+
+/** ATUALIZA O HP NO DOM */
+function atualizalife(){
+    life1.style.width = `${lutador1obj.life}%`;
+    life1.innerText = lutador1obj.life;
+
+    life2.style.width = `${lutador2obj.life}%`;
+    life2.innerText = lutador2obj.life;
+
+//ALTERA A COR DA BARRA DE VIDA QUANDO O PERSONAGEM TIVER 99 OU MENOS DE VIDA.
+    if(lutador1obj.life < 100){
+        life1.style.backgroundColor = "red";
+    };
+    if(lutador2obj.life < 100){
+        life2.style.backgroundColor = "red";
+    }
+    };
+
+ 
+//MANDA ALERT COM O VENCEDOR DA BATALHA
+function mostrarVencedor(nome){
+
+    alert(`${nome} venceu a batalha!!`);
+
+    log.innerHTML = "<h1>REINICIE O GAME</h1>";
+
+};
 //**************************************************************************************************************************************************************
 // SELETORES */
 //MANUTENÇÃO DO LOG.
