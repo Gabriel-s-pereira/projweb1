@@ -118,10 +118,9 @@ em um navegador.
 
 ## 📸 Captura de tela
 
-Uma captura de tela do jogo será adicionada posteriormente.
-
 ```text
-[ ADICIONAR SCREENSHOT AQUI ]
+<img width="959" height="539" alt="image" src="https://github.com/user-attachments/assets/cb401238-654d-4378-bd59-fd9705c5fa43" />
+
 ```
 
 ## 🚀 Próximas versões
